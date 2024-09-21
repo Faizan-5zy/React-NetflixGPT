@@ -2,6 +2,11 @@
 
 - Create React App
 - Configure TailwindCSS
+- Header - Logo
+- Login Form
+- Signup Form (seperate component for sign up / reusing the same signin form)
+- Validation
+
 
 # PLANNING
 # Features 
