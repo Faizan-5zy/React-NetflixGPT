@@ -8,7 +8,6 @@ import {
   updateProfile
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
-import { useNavigate } from "react-router-dom";
 
 
 
@@ -20,7 +19,6 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const username = useRef(null);
-  const navigate = useNavigate()
 
 
   // Validation
@@ -60,14 +58,13 @@ const Login = () => {
             displayName: username.current.value , photoURL: "https://example.com/jane-q-user/profile.jpg"
           }).then(() => {
             // Profile updated!
-            navigate('/browse')
             // ...
           }).catch((error) => {
             // An error occurred
             // ...
           });
           // ...
-          console.log(user);
+          // console.log(user);
         })
         .catch((error) => {
           let errorCode = error.code;
@@ -93,7 +90,6 @@ const Login = () => {
           // ...
           console.log(user)
 
-          navigate('/browse')
         })
         .catch((error) => {
           let errorCode = error.code;

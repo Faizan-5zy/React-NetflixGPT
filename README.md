@@ -29,7 +29,26 @@
     - we dispatch action based on sign in and out , and navigate using useNavigate hook to browse or exit page
     - implemented sign out
     - updated profile display name
+    - Bug fix : signup display name update
+              : user not logged in redirect to '/browse' to '/' login page & vice versa
+    - Unsubscribe to the onAuthChanged callback  
+    - always have constants file to store hard code      
 
+Browse Page 
+    - Go to tmdb website and login
+    - register tmdb app and create an app get access token
+    - get data from tmdb now playing movies API  
+    - Custom hook for get now playing movies 
+    - update store with movies data  
+    - create a movie slice in redux store to store the now playing movies fetched from API    
+    - Early return
+    - Update store with movies data
+    - planning for main container and secondary container
+    - fetch data for trailer in custom hook
+    - update store with trailer video data
+    - Embedded the youtube video and make it autoplay and mute
+    - Tailwind Classes to make main container awesome
+    - 
 # PLANNING
 # Features 
 - Login/sign up
