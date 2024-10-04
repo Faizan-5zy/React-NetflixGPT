@@ -9,7 +9,7 @@ const useGetTrailer=( movieId )=>{
   // const [trailerID,setTrailerID]=useState(null) instead of state variable we can use from redux store
   const dispatch = useDispatch()
   const trailerData = useSelector(store=>store.movies?.trailerVideo)
-  console.log("🚀 ~ VideoBackground ~ trailerData:", trailerData)
+  // console.log("🚀 ~ VideoBackground ~ trailerData:", trailerData)
   // console.log("movieId:", movieId)
 
   useEffect(() => {
@@ -24,9 +24,9 @@ const useGetTrailer=( movieId )=>{
       API_OPTIONS
     );
     const json = await data.json();
-console.log('json',json)
-console.log('json.results',json.results)
-    const trailer = json.results.filter(
+// console.log('json',json)
+// console.log('json.results',json.results)
+    const trailer = json?.results?.filter(
       (video) => video.name === "Official Trailer" && video.type === "Trailer"
     );
 
