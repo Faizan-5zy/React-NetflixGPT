@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 // import { Link } from 'react-router-dom'
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "../utils/firebase";
@@ -7,13 +7,25 @@ import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { addUser } from "../utils/userSlice";
 import { removeUser } from "../utils/userSlice";
-import { LOGO , USERLOGO } from "../utils/constants";
+import { LOGO , SUPPORTED_LANGUAGES, USERLOGO } from "../utils/constants";
+import { toggleGptSearchView } from "../utils/gptSlice";
+import { changeLanguage } from "../utils/configSlice";
 
 
 const Header = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
   const user = useSelector((store)=>store.user)
+  const gptView = useSelector((store)=>store.gpt.showGptSearchView)
+
+  const handleLanguageChange = (e) => {
+    // console.log(e.target.value)
+    dispatch(changeLanguage(e.target.value))
+  }
+
+  const handleGptClick=()=>{
+    dispatch(toggleGptSearchView())
+  }
 
   const handleSignOut=()=>{
     signOut(auth).then(() => {
@@ -59,8 +71,24 @@ const Header = () => {
     { user &&
     <div className="flex ">
 
+      {gptView &&
+      <select onChange={handleLanguageChange} className="h-12  px-4 py-2 my-3 mx-3 text-white bg-blue-500 rounded">
+        {SUPPORTED_LANGUAGES.map((lang)=>
+          <option key={lang.identifier} value={lang.identifier}>
+            {lang.name}
+          </option>
+        )}
+      </select>
+      }
+
+
+
+      <button onClick={handleGptClick} className="h-12  px-4 py-2 my-3 mx-3 cursor-pointer bg-green-500 text-white font-bold rounded z-10   ">
+            {/* <Link to="/gpt">ASK GPT</Link>     */}
+            {gptView?'HOME':'ASK GPT'}
+      </button>
       <img className="w-12 h-12   my-3 mx-3" src={USERLOGO} alt='logo' />
-      <button onClick={handleSignOut} className="h-12  px-4 py-2 my-3 mx-3 cursor-pointer bg-red-800 text-white font-bold rounded z-10   ">
+      <button onClick={handleSignOut} className="h-12  px-4 py-2 my-3 mx-3 cursor-pointer bg-red-600 text-white font-bold rounded z-10   ">
             {/* <Link to="/">Sign Out</Link> */}
             Sign Out
       </button>

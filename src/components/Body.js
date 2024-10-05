@@ -3,6 +3,7 @@ import Login from './Login'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Signup from './Signup'
 import { Error } from './Error'
+import Gpt from './Gpt'
 
 const Body = () => {
 
@@ -10,6 +11,10 @@ const Body = () => {
         {
             path:'/',
             element:<Login/>
+        },
+        {
+            path:'/gpt',
+            element:<Gpt/>
         },
         {
             path:'/browse',

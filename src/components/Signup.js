@@ -11,7 +11,7 @@ const Signup = () => {
         </div>
 
         <div className="absolute top-5 right-10 z-10">
-          <button className="px-4 py-2 cursor-pointer bg-red-700 text-white  rounded   ">
+          <button className="px-4 py-2 cursor-pointer bg-red-600 text-white  rounded   ">
             <Link to="/">Sign In</Link>
           </button>
         </div>
@@ -40,7 +40,7 @@ const Signup = () => {
             placeholder="Email"
           />
 
-        <button className="p-2 m-2 bg-red-700 text-white rounded w-3/12">Get Started</button>
+        <button className="p-2 m-2 bg-red-600 text-white rounded w-3/12">Get Started</button>
         </div>
       </div>
     </div>

@@ -1,5 +1,25 @@
 # Netflix GPt
 
+# Overview 
+
+      Header
+        - Netflix Logo  
+        - GPT Button
+        - User Logo
+        - SignOut Button
+
+      Main Container 
+        -Background Video
+        -Video Title
+       
+      Secondary Container
+        - Movie List * n 
+        - Movie Cards * n 
+
+      GPT Search Container  
+
+      
+
 - Create React App
 - Configure TailwindCSS
 - Header - Logo
@@ -53,7 +73,18 @@ Browse Page
     - Built Movie cards
     - TMDB img url
     - Made the browse page better with tailwind css 
-    - custom hooks for fetching different movies
+    - custom hooks for fetching different movies (now playing , popular etc.)
+
+Introduction to GPT
+    - Seperate Page for GPT search
+    - React Fragment
+    - GPT search Bar
+    - Multi language functionality
+    - Integrate GPT APIs
+
+
+
+
 # PLANNING
 # Features 
 - Login/sign up

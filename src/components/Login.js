@@ -8,6 +8,7 @@ import {
   updateProfile
 } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { BACKROUND_URL } from "../utils/constants";
 
 
 
@@ -117,7 +118,7 @@ const Login = () => {
 
       <div className="absolute">
         <img
-          src="https://assets.nflxext.com/ffe/siteui/vlv3/47c2bc92-5a2a-4f33-8f91-4314e9e62ef1/web/AE-en-20240916-TRIFECTA-perspective_0d16a60a-dae7-4284-9ffc-b58dc8ab8a0a_medium.jpg"
+          src={BACKROUND_URL}
           alt="logo"
         />
       </div>
@@ -155,7 +156,7 @@ const Login = () => {
           {errorMessage}
         </p>
         <button
-          className="p-2 m-2 bg-red-700 text-white rounded w-full hover:bg-red-800"
+          className="p-2 m-2 bg-red-600 text-white rounded w-full hover:bg-red-800"
           onClick={handleClick}
         >
           {isSignInForm ? "Sign In" : "Sign Up"}
